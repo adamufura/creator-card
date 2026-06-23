@@ -9,7 +9,11 @@
     "url": "profold-be-api-1"
   },
   "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js",
     "test": "set USE_MOCK_MODEL=1 && mocha --recursive --require dotenv/config",
+    "test:creator-cards": "USE_MOCK_MODEL=1 mocha test/creator-cards.test.js --require dotenv/config --timeout 10000",
+    "test:live": "node scripts/test-endpoints.js",
     "prepare": "husky",
     "commitlint": "commitlint --edit",
     "sync-envs": "node sync-env-files"
